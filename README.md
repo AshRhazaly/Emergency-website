@@ -1,24 +1,17 @@
-# README
+### Emergency website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Website built on
 
-Things you may want to cover:
+* Ruby 2.4.0
 
-* Ruby version
+* Ruby on Rails 5.0.1
 
-* System dependencies
+* Bootstrap 3.0.1
 
-* Configuration
+## User interactions
 
-* Database creation
+* Create posts and comments
 
-* Database initialization
+* Edit posts and comments
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Delete posts and comments

@@ -9,8 +9,8 @@
 <%= post.category %>
 <br />
 <%= post.content %>
+<%= link_to 'Comments', post_path(post) %>
 <%= link_to 'Edit', edit_post_path(post) %>
-<%= link_to 'Show', post_path(post) %>
 <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
 <hr />
 

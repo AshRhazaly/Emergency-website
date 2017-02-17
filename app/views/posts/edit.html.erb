@@ -1,15 +1,11 @@
 <%= bootstrap_form_for @post do |f| %>
 
-<%= f.label :name %>
 <%= f.text_field :name %>
 <br />
-<%= f.label :subject %>
 <%= f.text_field :subject %>
 <br />
-<%= f.label :category %>
 <%= f.select :category, ['Latest News','Resources','Need HELP NOW'] %>
 <br />
-<%= f.label :content %>
 <%= f.text_area :content %>
 <%= f.submit %>
 <% end %>

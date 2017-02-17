@@ -6,3 +6,8 @@
 .post-subject {
   font-size: 30px;
 }
+
+.post-name, .post-category {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}

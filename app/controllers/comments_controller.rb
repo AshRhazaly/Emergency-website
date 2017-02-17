@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.build(comment_params)
-    @comment.save!
+    @comment.save
     redirect_to post_path(@post)
   end
 
@@ -19,8 +19,8 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update
-      redirect_to post_path(@comment)
+    if @comment.update(comment_params)
+      redirect_to post_path(@post)
     else
       render 'edit'
     end

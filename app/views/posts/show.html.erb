@@ -1,17 +1,36 @@
-<%= @post.name %>
-<%= @post.subject %>
-<%= @post.category %>
-<%= @post.content %>
+<section class="container button-post">
+    <%= link_to 'Post your emergency here', new_post_path,class: "btn btn-default btn-post" %>
+</section>
+<section class="post-subject">
+  <%= @post.subject %>
+</section>
 
+<section class="post-name">
+    Written by:
+    <%= @post.name %>
+</section>
+
+<section class="post-category">
+    Category:
+    <%= @post.category %>
+</section>
+<br />
+<section class="post-content">
+    <%= @post.content %>
+</section>
 <br />
 <hr />
+<h4>Comments</h4>
 <% @post.comments.each do |comment| %>
-
+<section class="comment-name">
+  Written by:
 <%= comment.name %>
-
+</section>
+<section class="comment-content">
 <%= comment.content %>
-
+</section>
 <br />
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
 <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
 

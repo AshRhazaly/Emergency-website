@@ -2,11 +2,9 @@
 
 <%= bootstrap_form_for ([@post,@comment]) do |f| %>
 
-<%= f.label :name %>
 <%= f.text_field :name %>
 <br />
 
-<%= f.label :content %>
 <%= f.text_area :content %>
 
 <%= f.submit %>

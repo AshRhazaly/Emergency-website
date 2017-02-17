@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_params, only: [:index,:create,:new,:update,:edit,:destroy]
+  before_action :set_params, only: [:index,:create,:new,:update,:edit,:show]
   def index
     redirect_to new_post_comment_path
   end
@@ -9,20 +9,16 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.new(comment_params)
-    if @comment.save
-      redirect_to post_path(@post)
-    else
-      render 'new'
-    end
+    @comment = @post.comments.build(comment_params)
+    @comment.save!
+    redirect_to post_path(@post)
   end
 
   def show
   end
 
   def update
-    @post = Post.find(params[:post_id])
-    @comment = @post.find(params[:id])
+    @comment = Comment.find(params[:id])
     if @comment.update
       redirect_to post_path(@comment)
     else
@@ -31,13 +27,14 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = @post.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def destroy
-    @comment = @post.comments.find(params[:id])
+    post = Post.find(params[:post_id])
+    @comment = post.comments.find(params[:id])
     @comment.destroy
-    redirect_to comments_path
+    redirect_to post_path(post)
   end
 
 private

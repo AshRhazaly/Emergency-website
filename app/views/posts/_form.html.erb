@@ -1,0 +1,15 @@
+<%= form_for @post do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br />
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+<br />
+<%= f.label :category %>
+<%= f.text_field :category %>
+<br />
+<%= f.label :content %>
+<%= f.text_area :content %>
+
+<% end %>

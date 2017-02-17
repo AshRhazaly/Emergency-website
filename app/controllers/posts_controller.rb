@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_params, only: [:index, :new, :update, :edit, :destroy]
+  before_action :set_params, only: [:show, :update, :edit, :destroy]
   def index
     @post = Post.all
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destory
+    @post.destroy
     redirect_to posts_path
   end
 

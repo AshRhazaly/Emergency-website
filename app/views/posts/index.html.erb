@@ -1,2 +1,17 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+<h1>Post your emergencies</h1> -->
+<%= link_to 'Post your emergency here', new_post_path %>
+<% @post.each do |post| %>
+<%= post.name %>
+<br />
+<%= post.subject %>
+<br />
+<%= post.category %>
+<br />
+<%= post.content %>
+<%= link_to 'Edit', edit_post_path(post) %>
+<%= link_to 'Show', post_path(post) %>
+<%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
+<hr />
+
+<% end %>

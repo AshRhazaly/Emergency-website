@@ -4,14 +4,20 @@
 <%= @post.content %>
 
 <br />
+<hr />
 <% @post.comments.each do |comment| %>
 
 <%= comment.name %>
 
 <%= comment.content %>
+
+<br />
 <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
 <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
 
+<% end %>
+<br />
+<br />
+<br />
 <%= link_to "Add a new comment", new_post_comment_path(@post) %>
 <%= link_to "Go back", posts_path %>

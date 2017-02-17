@@ -1,5 +1,16 @@
 <h1>Edit your comment</h1>
 
-<%= render 'form' %>
+<%= form_for ([@post,@comment]) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br />
+
+<%= f.label :content %>
+<%= f.text_area :content %>
+
+<%= f.submit %>
+<% end %>
+
 
 <%= link_to 'Go back', post_path(@post) %>
